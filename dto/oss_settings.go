@@ -14,6 +14,7 @@ const (
 	OSSProviderTencentCloud OSSProvider = "tencent_cloud" // 腾讯云 COS
 	OSSProviderVolcengine   OSSProvider = "volcengine"    // 火山引擎 TOS
 	OSSProviderCloudflare   OSSProvider = "cloudflare"    // Cloudflare R2
+	OSSProviderMinio        OSSProvider = "minio"         // MinIO 自建对象存储 (S3 兼容)
 )
 
 type OSSSettingsRequest struct {
@@ -31,6 +32,7 @@ type OSSSettingsRequest struct {
 	TencentCloudOSSSettings map[string]any `json:"tencent_cloud_oss_settings"`
 	VolcengineTOSSettings   map[string]any `json:"volcengine_tos_settings"`
 	CloudflareR2Settings    map[string]any `json:"cloudflare_r2_settings"`
+	MinioOSSSettings        map[string]any `json:"minio_oss_settings"`
 }
 
 type OSSSettings struct {
@@ -48,6 +50,7 @@ type OSSSettings struct {
 	TencentCloudOSSSettings map[string]any `json:"tencent_cloud_oss_settings"`
 	VolcengineTOSSettings   map[string]any `json:"volcengine_tos_settings"`
 	CloudflareR2Settings    map[string]any `json:"cloudflare_r2_settings"`
+	MinioOSSSettings        map[string]any `json:"minio_oss_settings"`
 	CreatedAt               int64          `json:"created_at"`
 	UpdatedAt               int64          `json:"updated_at"`
 }
