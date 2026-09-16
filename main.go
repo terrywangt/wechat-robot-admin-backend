@@ -7,6 +7,8 @@ import (
 	"wechat-robot-admin-backend/startup"
 	"wechat-robot-admin-backend/vars"
 
+	"net/http"
+
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
@@ -36,6 +38,12 @@ func main() {
 	gin.SetMode(os.Getenv("GIN_MODE"))
 	app := gin.Default()
 	store := cookie.NewStore([]byte(vars.SessionSecret))
+	store.Options(sessions.Options{
+		Secure:   false, // HTTP 隧道下必须关闭，否则浏览器拒绝存储 cookie
+		HttpOnly: true,
+		SameSite: http.SameSiteLaxMode,
+		MaxAge:   30 * 24 * 60 * 60, // 30 天
+	})
 	app.Use(sessions.Sessions("session", store))
 	// 注册路由
 	if err := router.RegisterRouter(app); err != nil {
