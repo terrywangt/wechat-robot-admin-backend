@@ -40,6 +40,14 @@ type GetGlobalSettingsResponse struct {
 	ChatRoomSummaryModel      string         `form:"chat_room_summary_model" json:"chat_room_summary_model"`
 	ChatRoomSummaryMode       string         `form:"chat_room_summary_mode" json:"chat_room_summary_mode"`
 	ChatRoomSummaryCron       string         `form:"chat_room_summary_cron" json:"chat_room_summary_cron"`
+	ChatRoomSummaryMinMessages *int           `form:"chat_room_summary_min_messages" json:"chat_room_summary_min_messages"`
+	ChatRoomSummaryTriggerKeywords string      `form:"chat_room_summary_trigger_keywords" json:"chat_room_summary_trigger_keywords"`
+	ChatRoomSummaryWindowHours *int           `form:"chat_room_summary_window_hours" json:"chat_room_summary_window_hours"`
+	MediaExtractKeywords      string         `form:"media_extract_keywords" json:"media_extract_keywords"`
+	MediaEvaluateKeywords     string         `form:"media_evaluate_keywords" json:"media_evaluate_keywords"`
+	MediaExtractFailText      string         `form:"media_extract_fail_text" json:"media_extract_fail_text"`
+	MediaRecognizeFailText    string         `form:"media_recognize_fail_text" json:"media_recognize_fail_text"`
+	MediaRecognizeEmptyText   string         `form:"media_recognize_empty_text" json:"media_recognize_empty_text"`
 	NewsEnabled               bool           `form:"news_enabled" json:"news_enabled"`
 	NewsType                  string         `form:"news_type" json:"news_type"`
 	NewsCron                  string         `form:"news_cron" json:"news_cron"`
@@ -91,6 +99,14 @@ type SaveGlobalSettingsRequest struct {
 	ChatRoomSummaryModel      string         `form:"chat_room_summary_model" json:"chat_room_summary_model"`
 	ChatRoomSummaryMode       string         `form:"chat_room_summary_mode" json:"chat_room_summary_mode"`
 	ChatRoomSummaryCron       string         `form:"chat_room_summary_cron" json:"chat_room_summary_cron"`
+	ChatRoomSummaryMinMessages *int          `form:"chat_room_summary_min_messages" json:"chat_room_summary_min_messages"`
+	ChatRoomSummaryTriggerKeywords string    `form:"chat_room_summary_trigger_keywords" json:"chat_room_summary_trigger_keywords"`
+	ChatRoomSummaryWindowHours *int         `form:"chat_room_summary_window_hours" json:"chat_room_summary_window_hours"`
+	MediaExtractKeywords      string         `form:"media_extract_keywords" json:"media_extract_keywords"`
+	MediaEvaluateKeywords     string         `form:"media_evaluate_keywords" json:"media_evaluate_keywords"`
+	MediaExtractFailText      string         `form:"media_extract_fail_text" json:"media_extract_fail_text"`
+	MediaRecognizeFailText    string         `form:"media_recognize_fail_text" json:"media_recognize_fail_text"`
+	MediaRecognizeEmptyText   string         `form:"media_recognize_empty_text" json:"media_recognize_empty_text"`
 	NewsEnabled               bool           `form:"news_enabled" json:"news_enabled"`
 	NewsType                  string         `form:"news_type" json:"news_type"`
 	NewsCron                  string         `form:"news_cron" json:"news_cron"`
